@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/nangurepo/viggoscrape/issues"
   },
-  "homepage": "https://github.com/nangurepo/viggoscrape#readme"
+  "homepage": "https://github.com/nangurepo/viggoscrape#readme",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
 }

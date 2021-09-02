@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="da-DK">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>ViGGO | Nørreådal Friskole</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=2">
+    <meta name="theme-color" content="#2b2a2d">
+    <link rel="manifest" href="/manifest.json" type="application/manifest+json">
+<link rel="apple-touch-icon-precomposed" href="/Content/img/pwa-icons/180x180-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/Content/img/pwa-icons/120x120-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Content/img/pwa-icons/152x152-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/Content/img/pwa-icons/180x180-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="512x512" href="/Content/img/pwa-icons/512x512-precomposed.png" />
+<link rel="apple-touch-icon" href="/Content/img/pwa-icons/180x180.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/Content/img/pwa-icons/120x120.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/Content/img/pwa-icons/152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/Content/img/pwa-icons/180x180.png" />
+<link rel="apple-touch-icon" sizes="512x512" href="/Content/img/pwa-icons/512x512.png" />
+<link rel="apple-touch-startup-image" href="~/Content/img/pwa-icons/apple-splash/640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="~/Content/img/pwa-icons/apple-splash/750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="~/Content/img/pwa-icons/apple-splash/1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="~/Content/img/pwa-icons/apple-splash/1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="~/Content/img/pwa-icons/apple-splash/1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="~/Content/img/pwa-icons/apple-splash/1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="~/Content/img/pwa-icons/apple-splash/2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <meta name="apple-mobile-web-app-title" content="ViGGO" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link type="text/css" rel="stylesheet" href="/Content/viggo.min.css" asp-append-version="true" />
+
+        <script type="text/javascript" src="/Basic/Account/GetTranslateToJavaScripts"></script>
+        <script type="text/javascript" src="https://public.viggo.dk/shared/quill/1.3.7/quill.min.js"></script>
+        <script type="text/javascript" src="/Scripts/bundle.min.js" asp-append-version="true"></script>
+    <link href="/Content/img/favicon.ico" rel="shortcut icon" type="image/x-icon" asp-append-version="true" />
+</head>
+<body id="page-login">
+    <div id="background" style="background-image: url('/Content/img/backgrounds/times/day/1.jpg')"></div>
+    <main id="login">
+        <div id="client">
+            <div>N&#xF8;rre&#xE5;dal Friskole</div>
+        </div>
+        <section>
+            
+        <template id="existing-user-login">
+<form action="/Basic/Account/Login" method="post" class="existing-user password-selected ">
+    <div class="saved-user">
+        <img alt="" onerror="this.src='https://viggopublic.azureedge.net/shared/user.svg'" />
+        <h5 class="FullName"></h5>
+        <h6 class="username"></h6>
+    </div>
+    <div class="reset-saved-user">Log på med en anden konto</div>
+    <div class="form-group password-login">
+        <input type="password" autocomplete="off" name="Password" id="Password" class="cursor-selected animate" required="required" placeholder="Adgangskode" />
+        <input type="hidden" name="UserName" />
+        <button type="submit"><i class="o-flaticon-arrow-right"></i></button>
+    </div>
+    <div class="form-group fingerprint-login">
+        <button type="button" class="fingerprint"><i class="o-flaticon-fingerprint"></i></button>
+    </div>
+    <div class="form-group pin-login">
+        <input type="password" pattern="[0-9]{4}" inputmode="numeric" id="pin-input" placeholder="Pin" />
+    </div>
+        <div class="unic-login">Du viderestilles til UNI Login...</div>
+    <div class="form-group login-switch">
+            <button type="button" class="password"><i class="o-flaticon-password"></i><small>Brug adgangskode</small></button>
+        <button type="button" class="fingerprint"><i class="o-flaticon-fingerprint"></i><small>Brug fingeraftryk</small></button>
+        <button type="button" class="pin"><i class="o-flaticon-dots-all"></i><small>Use pin</small></button>
+            <button type="button" class="unic"><span>UNI<span></span>Login</span><small>Brug UNI Log ind</small></button>
+    </div>
+    <input type="hidden" name="returnUrl" value="/Basic/HomeworkAndAssignment" />
+    <input type="hidden" name="fingerprint" value="d657e352-47c0-4756-b867-0421dddcd215" />
+</form>
+<script type="text/javascript">
+    (function () {
+        let unicTimeout = 0;
+        function setTime() {
+            document.cookie = `fingerprint=${localStorage.getItem('fingerprint')};secure;samesite=lax`;
+            unicTimeout = setTimeout(function () {
+                window.location = "https://atlas.uni-login.dk/unilogin/login.cgi?id=edbbrugsen\u0026path=aHR0cHM6Ly9uci1hYWRhbC52aWdnby5kay9CYXNpYy9BY2NvdW50L1VuaWNMb2dpbi8=\u0026auth=6416773eae5bc310f0095db775e59b86";
+            }, 1200);
+        }
+        function stopTime() {
+            clearTimeout(unicTimeout);
+        }
+        function setSelected(type, form) {
+            let types = 'password fingerprint pin unic'.split(' ');
+            types.forEach(x => {
+                if (x != type) {
+                    form.classList.remove(`${x}-selected`);
+                }
+            });
+            form.classList.add(`${type}-selected`);
+            if (type == 'unic') {
+                setTime();
+            } else {
+                stopTime();
+            }
+            localStorage.setItem('loginType', type);
+            switch (type) {
+                case 'password':
+                case 'pin':
+                    let e = document.querySelector(`.${type}-login input[type="password"]`);
+                    if (e) {
+                        e.focus();
+                    }
+                    break;
+            }
+        }
+
+        let formGroup = document.querySelector('form .form-group.login-switch');
+        if (formGroup) {
+            let form = formGroup.closest('form');
+            if (form) {
+                formGroup.addEventListener('click', function (ev) {
+                    let button = ev.target.closest('button');
+                    if (form && button) {
+                        setSelected(button.className, form);
+                    }
+                }, false);
+
+                let type = localStorage.getItem('loginType');
+                if (!type || type == 'null' || type == 'unic') {
+                    type = 'password';
+                }
+                setSelected(type, form);
+            }
+        }
+    }());
+</script>
+        </template>
+        <template id="unknown-user-login">
+<form action="/Basic/Account/Login" method="post" class="unknown-user password-selected ">
+    <div class="password-login">
+        <div class="form-group">
+            <input required="required" autocomplete="username email" autocapitalize="none" autocorrect="off" data-val="true" data-val-required="The User name field is required." id="UserName" name="UserName" class="animate" placeholder="Initialer/Cpr./Email" type="text" value="" /><span class="autofill-tooltip">Autoudfyldt af din browser</span>
+        </div>
+        <div class="form-group">
+            <input type="password" name="Password" id="Password" placeholder="Adgangskode" required="required" class="animate" data-val="true" data-val-required="The Password field is required." />
+            <button type="submit"><i class="o-flaticon-arrow-right"></i></button>
+        </div>
+    </div>
+    <input type="hidden" name="returnUrl" value="/Basic/HomeworkAndAssignment" />
+    <input type="hidden" name="fingerprint" value="a7f87445-cac6-48eb-91f0-c4235ad9e874" />
+        <div class="unic-login">Du viderestilles til UNI Login...</div>
+        <div class="form-group login-switch">
+            <button type="button" class="password"><i class="o-flaticon-password"></i><small>Brug adgangskode</small></button>
+            <button type="button" class="unic"><span>UNI<span></span>Login</span><small>Brug UNI Log ind</small></button>
+        </div>
+        <script type="text/javascript">
+            (function () {
+                let unicTimeout = 0;
+                function setTime() {
+                    document.cookie = `fingerprint=${localStorage.getItem('fingerprint')};secure;samesite=lax`;
+                    unicTimeout = setTimeout(function () {
+                        window.location = "https://atlas.uni-login.dk/unilogin/login.cgi?id=edbbrugsen\u0026path=aHR0cHM6Ly9uci1hYWRhbC52aWdnby5kay9CYXNpYy9BY2NvdW50L1VuaWNMb2dpbi8=\u0026auth=6416773eae5bc310f0095db775e59b86";
+                    }, 1200);
+                }
+                function stopTime() {
+                    clearTimeout(unicTimeout);
+                }
+                let formGroup = document.querySelector('form .form-group.login-switch');
+                if (formGroup) {
+                    let form = formGroup.closest('form');
+                    formGroup.addEventListener('click', function (ev) {
+                        let button = ev.target.closest('button');
+                        if (button && form) {
+                            switch (button.className) {
+                                case 'password':
+                                    form.classList.add('password-selected');
+                                    form.classList.remove('unic-selected');
+                                    stopTime();
+                                    break;
+                                case 'unic':
+                                    form.classList.remove('password-selected');
+                                    form.classList.add('unic-selected');
+                                    setTime();
+                                    break;
+                            }
+                        }
+                    }, false);
+                }
+            }());
+        </script>
+</form>        </template>
+        <div id="v991173d3-92a0-4041-90cb-db309cdb9f7f"></div>
+        <a class="ajaxModal forgot animate" href="/Basic/Account/ForgotPassword#modal"><i class="o-flaticon-key"></i>Glemt din kode?</a>
+                <div id="pwa-install-app" style="display: none;">
+                <a class="pwa" href="#" title="Opret genvej til skrivebord"><i class="o-flaticon-chrome"></i>Opret genvej til skrivebord</a>
+</div>
+                <script type="text/javascript">
+                    viggo.func.installPwa(document.querySelector('#pwa-install-app'), document.querySelector('#pwa-install-app a'), (success) => {
+                        if (success) {
+                            document.getElementById("pwa-install-app").style.display = "none";
+                        }
+                    });
+                </script>
+<script type="text/javascript">
+    (function () {
+        let passwordLogInActive = true;
+        localStorage.removeItem("cache.version");
+        if (viggo.autocomplete) {
+            viggo.autocomplete.reload(true);
+        }
+        let setupForm = async function(user) {
+            let fragment;
+            if (user) {
+                fragment = document.getElementById('existing-user-login').content.cloneNode(true);
+                fragment.querySelector('img').src = user.image;
+                fragment.querySelector('.FullName').appendChild(viggo.dom.text(user.FullName));
+                let hiddenUsername = user.username;
+                if (hiddenUsername) {
+                    hiddenUsername = hiddenUsername.replace(/^(\d{6}\-?)[a-zA-Z0-9]{4}$/, "$1****");
+                }
+                fragment.querySelector('.username').appendChild(viggo.dom.text(hiddenUsername));
+                fragment.querySelector('input[name="UserName"]').value = user.username;
+                fragment.querySelector('.reset-saved-user').addEventListener('click', function () {
+                    localStorage.removeItem("registeredUser");
+                    setupForm(null);
+                }, false);
+                let fingerprint = fragment.querySelectorAll('.fingerprint');
+                let pinSent = false;
+                let removeFingerprintFeedback = function () {
+                    document.body.classList.remove('fingerprint-loading', 'fingerprint-redirect');
+                    pinSent = false;
+                };
+                let handleWebauthnResult = function (result) {
+                    if (result.status == "ok") {
+                        removeFingerprintFeedback();
+                        let element = document.getElementById('login-window');
+                        if (element) {
+                            element.remove();
+                            element = document.getElementById('notice');
+                            if (element) {
+                                element.remove();
+                            }
+                        } else {
+                            let url = document.querySelector('input[name="returnUrl"]');
+                            if (url) {
+                                url = url.value;
+                            }
+                            if (!url) {
+                                url = '/';
+                            }
+                            if (url.toLowerCase().indexOf('/basic/account/logoff') != -1) {
+                                url = '/';
+                            }
+                            document.body.classList.add('fingerprint-redirect');
+                            window.location.href = url;
+                        }
+                    } else {
+                        viggo.notice('error', result.errorMessage);
+                        removeFingerprintFeedback();
+                    }
+                    pinSent = false;
+                }
+                if (viggo.webauthn.isSupported && viggo.webauthn.getSavedUsername() == user.username) {
+                    fingerprint.forEach(a => a.addEventListener('click', function (ev) {
+                        ev.preventDefault();
+                        ev.stopPropagation();
+                        removeFingerprintFeedback();
+                        document.body.classList.add('fingerprint-loading');
+                        let authn = new viggo.webauthn({ username: user.username });
+                        authn.get().then(handleWebauthnResult).catch(removeFingerprintFeedback);
+                    }, false));
+
+                } else {
+                    fingerprint.forEach(a => a.remove());
+                }
+                if (await viggo.webauthn.isPinSupported() && viggo.webauthn.hasLocalPin) {
+                    fragment.querySelector('input[type="password"]#pin-input').addEventListener('keyup', function () {
+                        if (this.value.length == 4 && !pinSent) {
+                            pinSent = true;
+                            document.body.classList.add('fingerprint-loading');
+                            let authn = new viggo.webauthn({ username: user.username });
+                            authn.getPin(this.value).then(handleWebauthnResult).catch(removeFingerprintFeedback);
+                            this.value = '';
+                        }
+                    });
+                } else {
+                    fragment.querySelectorAll('.pin-login,button.pin').forEach(x => x.remove());
+                }
+                /*
+                let form = fragment.querySelector('form');
+                switch (localStorage.getItem('loginType')) {
+                    case 'fingerprint':
+                        form.classList.add('fingerprint-selected');
+                        break;
+                    case 'password' && passwordLogInActive:
+                        form.classList.add('password-selected');
+                        break;
+                }
+                */
+            } else {
+                fragment = document.getElementById('unknown-user-login').content.cloneNode(true);
+            }
+            let form = fragment.querySelector('form');
+            if (form) {
+                let userinput = form.querySelector('input[type="text"],input[type="password"]');
+                if (userinput) {
+                    userinput.focus();
+                }
+                form.addEventListener('submit', function () {
+                    var main = document.getElementsByTagName('main')[0];
+                    if (main) {
+                        main.classList.add('loading');
+                        form.querySelectorAll('button').forEach(btn => btn.disabled = true);
+                    }
+                }, false);
+                let container = document.getElementById('v991173d3-92a0-4041-90cb-db309cdb9f7f');
+                if (container) {
+                    viggo.dom.empty(container);
+                    container.appendChild(fragment);
+                }
+                let fingerprintInput = form.querySelector('input[type="hidden"][name="fingerprint"]');
+                if (fingerprintInput) {
+                    let fingerprint = localStorage.getItem('fingerprint');
+                    if (fingerprint) {
+                        fingerprintInput.value = fingerprint;
+                    } else {
+                        localStorage.setItem('fingerprint', fingerprintInput.value);
+                    }
+                }
+            }
+        }
+        let user = viggo.getRegisteredUser();
+        setupForm(user);
+    }());
+</script>
+<div style="display:none">nr-aadal.viggo.dk.</div>
+        </section>
+        <a href="/Help" target="_blank" class="no-ajax need-help"><i class="o-flaticon-help"></i> Brug for hjælp?</a>
+        <a href="http://viggo.dk" target="_blank" class="no-ajax viggo">ViGGO.DK A/S</a>
+    </main>
+
+        <script type="text/javascript">
+            document.body.addEventListener('Ctrl+M', function (event) {
+                viggo.modal.showAjax('/Basic/Account/SuperAdminLogin/');
+            }, false);
+
+            if (viggo.isLoggedIn()) {
+                window.location.reload(true);
+            }
+        </script>
+</body>
+</html>
