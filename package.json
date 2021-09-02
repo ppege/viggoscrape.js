@@ -1,0 +1,24 @@
+{
+  "name": "viggoscrape",
+  "version": "1.0.0",
+  "description": "Scrape viggo assignments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nangurepo/viggoscrape.git"
+  },
+  "keywords": [
+    "scraping",
+    "viggo",
+    "school"
+  ],
+  "author": "Nangu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nangurepo/viggoscrape/issues"
+  },
+  "homepage": "https://github.com/nangurepo/viggoscrape#readme"
+}
