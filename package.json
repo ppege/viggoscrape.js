@@ -1,5 +1,5 @@
 {
-  "name": "viggoscrape",
+  "name": "@NanguRepo/viggoscrape",
   "version": "1.0.0",
   "description": "Scrape viggo assignments",
   "main": "index.js",
