@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Scrape viggo assignments",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/nangurepo/viggoscrape#readme",
   "dependencies": {
-    "request": "^2.88.2"
-  }
+    "pythonia": "^0.2.12"
+  },
+  "devDependencies": {}
 }
