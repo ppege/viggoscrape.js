@@ -24,8 +24,5 @@
   "homepage": "https://github.com/nangurepo/viggoscrape#readme",
   "dependencies": {
     "pythonia": "^0.2.12"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
 }
