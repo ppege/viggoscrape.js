@@ -1,6 +1,6 @@
 {
-  "name": "@NanguRepo/viggoscrape",
-  "version": "1.0.0",
+  "name": "@nangurepo/viggoscrape",
+  "version": "1.0.1",
   "description": "Scrape viggo assignments",
   "main": "index.js",
   "type": "module",
@@ -25,5 +25,7 @@
   "dependencies": {
     "pythonia": "^0.2.12"
   },
-  "devDependencies": {}
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
