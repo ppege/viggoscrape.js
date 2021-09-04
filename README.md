@@ -32,7 +32,7 @@ Let's try this out! We'll import the module, give it the required info, then log
 
 ```javascript
 import getAssignments from 'viggoscrape'
-var subdomain = "nr-aadal"
+var subdomain = "example-subdomain"
 var loginInfo = {
     "USERNAME": "example@example.com",
     "PASSWORD": "Password1234"
