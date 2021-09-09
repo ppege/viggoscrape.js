@@ -43,9 +43,9 @@ This lets you import the module using `import` instead of `require`.
 
 If you for, whatever reason, can't use ES6, refer to [this article](https://dev.to/antongolub/errrequireesm-4j0h).
 
-### Information syntax
+### Parameters
 
-To use Viggoscrape, you need to provide it with login info and a subdomain.
+To use Viggoscrape, you need to provide it with the subdomain, your login info, and a boolean value describing whether you'd like the output written to a file or not.
 
 #### Subdomain
 
@@ -66,12 +66,25 @@ The login info uses 2 pieces of information:
 -  Username
 -  Password
 
-These would, of course, be the username and password you use to login to viggo normally. Don't worry, I won't steal your information 😏
+The info should be structured like so:
+```js
+{
+    "USERNAME": "your username",
+    "PASSWORD": "your password"
+}
+```
+
+Don't worry, I won't steal your information 😏
 ###### Really, though, you can look through the [source code](https://github.com/NanguRepo/viggoscrape.py/blob/main/viggoscrape/src/viggoscrape.py) if you're unsure.
 
-### Usage example
+#### writeToFile
+A boolean value specifying whether or not you'd like the output written to a json file.
+When the value is `true` the output will be written to `assignmentData.json` in the same directory as the function is called in. When the value is `false` the output will just be returned.
 
-Let's try this out! We'll import the module, give it the required info, then log the output once the [promise](https://heynode.com/tutorial/what-are-promises/) is resolved.
+### Usage examples
+Let's try this out! 
+#### Direct output
+We'll import the module, give it the required info, tell it not to write the output to a file, then log the output once the [promise](https://heynode.com/tutorial/what-are-promises/) is resolved.
 
 ```javascript
 import getAssignments from 'viggoscrape'
@@ -80,11 +93,11 @@ var loginInfo = {
     "USERNAME": "example@example.com",
     "PASSWORD": "Password1234"
 }
-getAssignments(subdomain, loginInfo)
+getAssignments(subdomain, loginInfo, false)
 .then(console.log);
 ```
 
-Our output would look something like this:
+Our console output would look something like this:
 ```json
 {
     "subject": ["English", "Math"],
@@ -96,7 +109,33 @@ Our output would look something like this:
     "url": ["https://example-subdomain.viggo.dk/Basic/HomewordAndAssignment/Details/1234/#modal", "https://example-subdomain.viggo.dk/Basic/HomewordAndAssignment/Details/1235/#modal"]
 }
 ```
+#### Output to file - for the lazy programmer
+We'll do the same thing as before, except this time, we set the third positional argument to `true`.
 
-Now, you can do anything you want with this newfound data, like save it to a json file, create an embed for your [discord bot](https://github.com/nangurepo/fessor), or any other purpose. Just use the same index on all lists and the data should match.
+```javascript
+import getAssignments from 'viggoscrape'
+import * as fs from 'fs' // this will be used later
+var subdomain = "example-subdomain"
+var loginInfo = {
+    "USERNAME": "example@example.com",
+    "PASSWORD": "Password1234"
+}
+getAssignments(subdomain, loginInfo, true);
+```
+
+We won't get any output directly in the console, but we'll have a new file called `assignmentData.json` with the same thing in it - this can be used to bypass fiddly promise handling.
+
+Now to actually read the file:
+```js
+fs.readFile('assignmentData.json', (err, data) => {
+    if (err) throw err;
+    let assignmentData = JSON.parse(data);
+    console.log(assignmentData);
+});
+```
+This will create the same output in the console as with the direct output example, but now you have a JSON object without any crazy Node.js promise hassle.
+
+
+Now, you can do anything you want with this newfound data, like create an embed for your [discord bot](https://github.com/nangurepo/fessor), or any other purpose. Just use the same index on all lists and the data should match.
 
 
