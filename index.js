@@ -16,9 +16,17 @@ export default async function getAssignments(options) {
         console.log(keys.constructor);
         throw 'Keys needs to be a dictionary!'
     }
+    if (("USERNAME" in keys && "PASSWORD" in keys) === false) {
+        throw 'Keys need a USERNAME value and a PASSWORD value.'
+    }
     const viggoscrape = await python('viggoscrape');
     const output = await viggoscrape.get_assignments(subdomain, keys);
     python.exit();
     
-    return JSON.stringify(JSON.parse(output), null, 2);
+    if (output === "Invalid credentials") {
+        throw output;
+    } else {
+        return JSON.stringify(JSON.parse(output), null, 2);
+    }
+
 }

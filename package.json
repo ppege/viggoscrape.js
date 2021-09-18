@@ -1,6 +1,6 @@
 {
   "name": "viggoscrape",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Scrape viggo assignments",
   "main": "index.js",
   "type": "module",
