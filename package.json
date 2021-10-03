@@ -1,7 +1,7 @@
 {
   "name": "viggoscrape",
-  "version": "1.2.1",
-  "description": "Scrape viggo assignments",
+  "version": "2.0.0",
+  "description": "Scrape viggo assignments using the Viggoscrape API",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/nangurepo/viggoscrape#readme",
   "dependencies": {
-    "fs-extra": "^10.0.0",
-    "pythonia": "^0.2.12"
+    "node-fetch": "^3.0.0"
   }
 }
