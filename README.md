@@ -11,31 +11,24 @@ Node.js module for scraping *[Viggo](http://viggo.dk/)* assignments by interacti
 
 ### Installing the module
 
-Now to actually install the module, it's pretty straightforward.
+Installing the module is done like this:
 
 ```bash
 npm install --upgrade viggoscrape
 ```
 
-### A special requirement
-
-Viggoscrape requires [ES6](https://www.w3schools.com/js/js_es6.asp) in order to be imported. If your project supports it, add this to your `package.json`:
-```json
-"type": "module"
-```
-If you can't do this, change the file extension of your JS file to .mjs.
-This lets you import the module using `import` instead of `require`.
-
-If you for, whatever reason, can't use ES6, refer to [this article](https://dev.to/antongolub/errrequireesm-4j0h).
-
 ## Quickstart
 
 ### Parameters
 
-To use Viggoscrape, pass it a dictionary containing the following:
+Required arguments:
 -  `subdomain`
 -  `username`
 -  `password`
+
+Optional arguments:
+-  `date`
+-  `version`
 
 The subdomain is the very first part of the url for your viggo page.
 Specify only the subdomain.
