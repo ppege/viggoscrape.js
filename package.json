@@ -1,6 +1,6 @@
 {
   "name": "viggoscrape",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Scrape viggo assignments using the Viggoscrape API",
   "main": "index.js",
   "type": "module",
@@ -14,7 +14,11 @@
   "keywords": [
     "scraping",
     "viggo",
-    "school"
+    "school",
+    "viggo api",
+    "scrape viggo",
+    "viggo json",
+    "viggo webapi"
   ],
   "author": "Nangu",
   "license": "MIT",
@@ -23,6 +27,11 @@
   },
   "homepage": "https://github.com/nangurepo/viggoscrape#readme",
   "dependencies": {
-    "node-fetch": "^3.0.0"
+    "fetch": "^1.1.0",
+    "node-fetch": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-config-google": "^0.14.0"
   }
 }

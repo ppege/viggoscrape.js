@@ -2,27 +2,46 @@
 
 import fetch from 'node-fetch';
 
-export default async function getAssignments(keys) {
-    var errors = []
-    if (keys == null) {
-        errors.push('Keys are required!');
-    }
+/**
+ * Get an array of assignments
+ * @param {object} options Has to include subdomain, username and password.
+*/
+export async function getAssignments(options) {
+    return getData(options, false);
+}
 
-    if (keys.constructor != Object) {
-        errors.push('Keys needs to be a dictionary!')
-    }
+/**
+ * Get an object of attributes
+ * @param {object} options Has to include subdomain, username and password.
+*/
+export async function getAttributes(options) {
+    return getData(options, true);
+}
 
-    if (("subdomain" in keys && "username" in keys && "password" in keys) === false) {
-        errors.push('Keys need a subdomain value, a username value and a password value.')
+/**
+ * Get the data from viggoscrape.xyz
+ * @param {object} options The login information.
+ * @param {boolean} attributes Whether or not to group by attributes
+ * @return {object|array} The data from viggoscrape.xyz
+ */
+async function getData(options, attributes) {
+    if (options === undefined) {
+        throw new SyntaxError('Options must be passed');
     }
-
-    if (errors.length !== 0) {
-        return {"errors":errors}
+    const subdomain = options.subdomain || null;
+    const username = options.username || null;
+    const password = options.password || null;
+    const version = options.version || 'v2';
+    const date = options.date || null;
+    let url = `http://viggoscrape.xyz/api/${version}/scrape?date=${date}&subdomain=${subdomain}&username=${username}&password=${password}`;
+    if (attributes === true) {
+        url += '&groupByAssignment=0';
     }
-
-    let url = `https://viggoscrape.xyz/api/v1/scrape?subdomain=${keys['subdomain']}&username=${keys['username']}&password=${keys['password']}`;
     const response = await fetch(url);
     const data = await response.json();
-    return data;
-
+    if (data.errors !== undefined) {
+        throw new Error(data.errors);
+    } else {
+        return data;
+    }
 }
