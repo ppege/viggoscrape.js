@@ -1,6 +1,6 @@
 # Viggoscrape.js
 
-Node.js module for scraping *[Viggo](http://viggo.dk/)* assignments by interacting with the [Viggoscrape API](https://github.com/nangurepo/viggoscrapeapi).
+Node.js module for scraping *[Viggo](http://viggo.dk/)* assignments by interacting with the [Viggoscrape API](https://viggoscrape.nangurepo.com/).
 >The API is designed for **danish** users, and time will be adjusted to the **CET** timezone.
 
 ## Installation
