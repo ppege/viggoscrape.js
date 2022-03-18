@@ -33,7 +33,7 @@ async function getData(options, attributes) {
     const password = options.password || null;
     const version = options.version || 'v2';
     const date = options.date || null;
-    let url = `http://api.nangurepo.com/api/${version}/scrape?date=${date}&subdomain=${subdomain}&username=${username}&password=${password}`;
+    let url = `http://api.nangurepo.com/${version}/scrape?date=${date}&subdomain=${subdomain}&username=${username}&password=${password}`;
     if (attributes === true) {
         url += '&groupByAssignment=0';
     }
