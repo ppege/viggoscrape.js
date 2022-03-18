@@ -1,6 +1,6 @@
 {
   "name": "viggoscrape",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "Scrape viggo assignments using the Viggoscrape API",
   "main": "index.js",
   "type": "module",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nangurepo/viggoscrape.git"
+    "url": "git+https://github.com/nangurepo/viggoscrape.js.git"
   },
   "keywords": [
     "scraping",
@@ -23,9 +23,9 @@
   "author": "Nangu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nangurepo/viggoscrape/issues"
+    "url": "https://github.com/nangurepo/viggoscrape.js/issues"
   },
-  "homepage": "https://github.com/nangurepo/viggoscrape#readme",
+  "homepage": "https://github.com/nangurepo/viggoscrape.js#readme",
   "dependencies": {
     "fetch": "^1.1.0",
     "node-fetch": "^3.1.0"
